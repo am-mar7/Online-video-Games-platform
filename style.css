@@ -43,7 +43,7 @@
 
 }
 #cards-container .card{
-    filter: grayscale(50%);
+    filter: grayscale(70%);
     transition: all 0.5s ease-in-out;
 }
 #cards-container .card:hover{
