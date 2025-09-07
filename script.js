@@ -31,7 +31,7 @@ window.addEventListener("scroll", () => {
     } else {
       scrollTopBtn.style.display = "none";
     }
-    const breakingHeight = document.querySelector('.header-img').offsetHeight
+    const breakingHeight = document.querySelector('.header-img').offsetHeight - document.querySelector('.navbar-expand-md').offsetHeight /2
     if(window.scrollY > breakingHeight){
         document.querySelector('.navbar-expand-md').classList.add('sticky')
     }
