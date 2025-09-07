@@ -16,13 +16,26 @@
     color: aliceblue;
 }
 .rounded-md-pill {
-    border-radius: 0 !important;
+    border-radius: 1rem !important;
 }
 
 @media (min-width: 768px) {
     .rounded-md-pill {
       border-radius: 50rem !important; 
     }
+}
+.navbar-expand-md{
+  width: 80%; 
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+@media (max-width:768px) {
+  .navbar-expand-md{
+    transform: translateY(0);
+  }
+  #details-img{
+    max-width: 100% !important;
+  }
 }
 #cards-container{
     width: 80%;
@@ -35,11 +48,10 @@
 }
 .sticky{
   position: fixed;
-  left: 20%;
+  left: 10%;
   top: 0;
-  width: 60% !important;
   transform: translateY(0px) !important;
-  z-index: 1000;
+  z-index: 999;
 
 }
 #cards-container .card{
@@ -102,6 +114,7 @@
     padding: calc(12px + 2vw) 16vw;
     overflow-y: scroll;
     scrollbar-width: none;
+    z-index: 1000;
 }  
 #close-details{
   font-size: calc(15px + 1vw);
@@ -112,6 +125,7 @@
     padding: 20px;
   }
 } 
+
     
 #scrollTopBtn {
   position: fixed;
@@ -123,7 +137,7 @@
   color: var(--bs-primary); 
   border: none;
   display: none;
-  z-index: 1050;
+  z-index: 998;
   
 }
 
