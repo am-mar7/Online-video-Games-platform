@@ -26,10 +26,17 @@ scrollTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   })
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 500) {
       scrollTopBtn.style.display = "inline-flex";
     } else {
       scrollTopBtn.style.display = "none";
+    }
+    const breakingHeight = document.querySelector('.header-img').offsetHeight
+    if(window.scrollY > breakingHeight){
+        document.querySelector('.navbar-expand-md').classList.add('sticky')
+    }
+    else{
+        document.querySelector('.navbar-expand-md').classList.remove('sticky')
     }
 })  
 closeDetails.addEventListener('click' , ()=>{
