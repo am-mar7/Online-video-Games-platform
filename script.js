@@ -2,15 +2,17 @@
 const navLinks = document.querySelectorAll('.nav-link') ,
 cardsContainer = document.getElementById('cards-container'),
 loading = document.querySelector('.loading') ,
+closeDetails =document.getElementById('close-details'),
+detailsEl = document.querySelector('.details '),
+scrollTopBtn = document.getElementById("scrollTopBtn"),
 options = {
     method:'GET',
     headers: {
         'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
         'x-rapidapi-key' : 'fe5aa29ed8msh60e894d37da0a7ap114399jsn1962fd0c5d53'
     }
-},
-closeDetails =document.getElementById('close-details'),
-detailsEl = document.querySelector('.details ')
+}
+
 navLinks.forEach(link => {
     link.addEventListener('click' , ()=>{
         for(let i = 0 ; i < navLinks.length ; i++){
@@ -19,10 +21,22 @@ navLinks.forEach(link => {
         link.classList.add('active')
         getGamesByCategory(link.innerHTML)
     })
-});
+})
+scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  })
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      scrollTopBtn.style.display = "inline-flex";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+})  
 closeDetails.addEventListener('click' , ()=>{
     detailsEl.classList.add('d-none')
 })
+
+
 
 async function getGamesByCategory (category) {     
     loading.classList.remove('d-none')
@@ -83,3 +97,7 @@ async function displayGameDetails(gameId){
     detailsEl.classList.remove('d-none')
 }
 getGamesByCategory('MMORPG')
+
+
+
+
